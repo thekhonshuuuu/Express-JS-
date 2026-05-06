@@ -17,11 +17,10 @@ const PORT = 4000;
 
 app.get('/api/animals', (request, response) => {
     console.log(request.query);
-    const { query:
+    const
         {
             filter,value
-        }
-    } = request.query;
+        } = request.query;
 
     if(!filter || !value) return response.status(400).send("No users found!")
     else return response.send(animals.filter((animal)=>String(animal[filter]).includes(value)));
